@@ -10,8 +10,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
-time, audio, video, mark, marker, button, form,
-vw, vh
+time, audio, video, mark, marker, button, form
 {
 	margin: 0;
 	padding: 0;

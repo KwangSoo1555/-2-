@@ -8,25 +8,38 @@ const options = {
     }
 };
 
-function movieApi() {
-fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
+// main page api
+
+function movieMain() {
+    fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => console.error(err));
 }
 
-// 검색 이벤트
+// main search event
 
 const searchFocus = document.getElementById('search-input');
+
 searchFocus.addEventListener('mousedown', function () {
     searchFocus.placeholder = '';
 });
-searchFocus.addEventListener('blur', function () {
-    searchFocus.value = '';
-    searchFocus.placeholder = '제목을 검색해 보세요.';
+
+const searchButton = document.getElementById('button-search');
+searchButton.addEventListener('click', function weeklyMovie() {
+    movieMain();
+
+    
+
+    if(searchFocus.value === 'abc') {
+        alert('추천에 없는 영화입니다. 다시 검색해 주세요.')
+    }
+    searchFocus.addEventListener('blur', function () {
+        searchFocus.value = '';
+        searchFocus.placeholder = '제목을 검색해 보세요.';
+    });
 });
 
-// const searchButton = document.getElementById('button-search');
-// searchButton.addEventListener('click', function weeklyMovie () {
+// function weeklyMovie() {
 
-// })
+// }
