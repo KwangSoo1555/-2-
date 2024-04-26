@@ -10,36 +10,127 @@ const options = {
 
 // main page api
 
-function movieMain() {
-    fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
-        .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
+const mainApi = async () => {
+    try {
+        const res = await fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options);
+        const data = await res.json();
+        return data;
+    } catch (err) {
+        console.log(err);
+    }
 }
+
+// api data roof
+
+const roofApiData = async () => {
+    try {
+        const data = await mainApi();
+        if (data) {
+            const MainSection = document.getElementById('main-section');
+            const results = data['results'];
+            results.forEach(el => {
+                createMainCard(MainSection, el);
+                // const mainTitle = el.title;
+                // searchEvent(mainTitle);
+            });
+        } else {
+            console.log('Error fetching data');
+        }
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+// create card section
+
+const createMainCard = async (MainSection, el) => {
+    try {
+        const { id: mainId, 
+            title: mainTitle, 
+            overview: mainOverview, 
+            vote_average: mainVoteAverage, 
+            poster_path: posterPath } 
+            = el;
+
+        const mainCard = document.createElement('div');
+        mainCard.classList.add('main-card');
+        mainCard.innerHTML = `
+            <div class="main-card-header">
+                <img src="https://image.tmdb.org/t/p/w500${posterPath}">
+            </div>
+            <div class="main-card-body">
+                <p class="main-card-title">${mainTitle}</p>
+                <p class="main-card-overview">${mainOverview}</p>
+            </div>
+            <div class="main-card-footer">
+                <p>Rating: ${mainVoteAverage}</p>
+            </div>
+        `;
+        
+        MainSection.append(mainCard);
+        
+        mainCard.addEventListener('click', () => {
+            window.alert(`영화 id : ${mainId}`)
+        });
+
+
+        // serach evnet
+
+        const searchButton = document.getElementById('button-search');
+        const searchInput = document.getElementById('search-input');
+        
+        searchButton.addEventListener('click', function () {
+            if (mainTitle.toLowerCase().includes(searchInput)) {
+                createMainCard(MainSection, el);
+            } else {
+                window.alert('리스트에 없는 영화입니다! 다시 검색해 주세요.')
+            }
+        });
+
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+// const searchButton = document.getElementById('button-search');
+// const searchInput = document.getElementById('search-input');
+        
+// searchButton.addEventListener('click', function searchEvent(mainTitle) {
+//     if (mainTitle.toLowerCase().includes(searchInput)) {
+//         createMainCard(MainSection, el);
+//     } else {
+//         window.alert('리스트에 없는 영화입니다! 다시 검색해 주세요.')
+//     }
+// });
+
+roofApiData();
 
 // main search event
 
-const searchFocus = document.getElementById('search-input');
+// let searchButtonClicked = false;
 
-searchFocus.addEventListener('mousedown', function () {
-    searchFocus.placeholder = '';
-});
+// searchInput.addEventListener('mousedown', function () {
+//     searchInput.placeholder = '';
+// });
 
-const searchButton = document.getElementById('button-search');
-searchButton.addEventListener('click', function weeklyMovie() {
-    movieMain();
+// searchInput.addEventListener('blur', function () {
+//     searchButtonClicked = false; console.log('false');
+//     searchInput.value = '';
+//     searchInput.placeholder = '제목을 검색해 보세요.';
+// });
 
+// searchButton.addEventListener('click', function () {
+//     searchButtonClicked = true; console.log('true');
+
+//     if (searchInput.value === 'abc') {
+//         alert('추천에 없는 영화입니다. 다시 검색해 주세요.')
+//     }
+// });
+
+// searchButton.addEventListener('click', function () {
     
+//     const irrelevantAphTitle = el.MainTitle.toLowerCase();
 
-    if(searchFocus.value === 'abc') {
-        alert('추천에 없는 영화입니다. 다시 검색해 주세요.')
-    }
-    searchFocus.addEventListener('blur', function () {
-        searchFocus.value = '';
-        searchFocus.placeholder = '제목을 검색해 보세요.';
-    });
-});
+    // if (searchInput.value)
 
-// function weeklyMovie() {
-
-// }
+// })

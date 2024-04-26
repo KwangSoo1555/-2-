@@ -1,6 +1,5 @@
 .movie-title {
     display: flex;
-    width: 100vw;
     height: 10vh;
     align-items: center;
     justify-content: center;
@@ -16,6 +15,7 @@
     height: 7vh;
     justify-content: center;
     align-items: center;
+    background-color: pink;
 }
 
 .movie-search .wrapper {
@@ -38,10 +38,10 @@
 .movie-select {
     display: flex;
     flex-wrap: wrap;
-    width: 100vw;
     height: 12vh;
     justify-content: center;
     align-items: center;
+    background-color: aquamarine;
 }
 
 .movie-select .button-wrapper {
@@ -54,5 +54,55 @@
     cursor: pointer;
     font-size: 0.8vw;
     height: 3em;
-    /* background-color: white; */
+}
+
+.movie-section-main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+}
+
+.main-card {
+    position: relative;
+    width: 20vw;
+    justify-self: center;
+    padding: 1.5vw;
+    margin: 2vw 1vw 2vw 1vw;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 2em;
+    box-shadow: 0.5em 0.5em gray;
+    background-color: bisque;
+}
+
+.main-card:hover {
+    transform: scale(1.1);
+    box-shadow: 1.5em 1.5em gray;
+}
+
+.main-card-header img {
+    width: 100%;
+    border-radius: 1em;
+}
+
+.main-card-body {
+    margin: 0.5vw 0 1vw 0;
+}
+
+.main-card-title {
+    margin-bottom: 0.5vw;
+    font-size: 1.3vw;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main-card-overview {
+    font-size: 0.9vw;
+}
+
+.main-card-footer {
+    position: absolute;
+    bottom: 0;
+    margin: 1vw 0 1vw 0;
+    font-weight: bold;
 }
