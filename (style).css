@@ -1,37 +1,162 @@
+/* font */
+/* @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap'); */
+
+p {
+    font-size: 0.7vw;
+}
+
+.head-container {
+    position: relative;
+    overflow: hidden;
+    height: 30vh;
+}
+
+.head-ani {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.75;
+}
+
+.head-ani .img {
+    flex: 1;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.head-ani .img1 {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMlw3bbax7fsCXsXkgH7lTHAYAyXIUdD7I8g&s);
+}
+
+.head-ani .img2 {
+    background-image: url(https://search.pstatic.net/sunny/?src=https%3A%2F%2Fupload3.inven.co.kr%2Fupload%2F2020%2F08%2F23%2Fbbs%2Fi15590491315.jpg&type=a340);
+}
+
+.head-ani .img3 {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_SYbxk_dso4zENXiqHcyefOznybcBNf_yxw&s);
+}
+
+.head-ani .img4 {
+    background-image: url(https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20151019_264%2Fgeminia_144523362001671Ouh_JPEG%2Ftumblr_nvw2fz7DCb1qde7iyo2_r1_500.jpg&type=a340);
+}
+
+.head-ani .img5 {
+    background-image: url(https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAzMDNfMjE3%2FMDAxNjc3ODAxMDU0OTM4.dtiX3QDL3Zh_0pSp8Fnm4Y8xJw7TIl1Ary4-NQq1Ttkg.NgYKr3b5flfMVYVVULC9HYvleMQ5zjw_dKQ6HEJuhAkg.PNG.showme20035%2Fimage.png&type=a340);
+}
+
+.head-ani .img6 {
+    background-image: url(https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTBfMTAg%2FMDAxNzEwMDM0ODE2MDMz.OR3zqql88CxBS1abvcfknN3fHoXn0KK50IWDFsdSe4Ug.tjQ-xbxpWHVsd0mnQOAOZzWFUM7qZHNQ9RbT_DZU3dgg.PNG%2F1_%25286%2529.png&type=a340);
+}
+
+.head-ani .img7 {
+    background-image: url(https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20141119_23%2Fwhtlwkal1_14163989890891gBHk_PNG%2F%25C4%25DA%25BD%25BA%25B8%25F0%25BD%25BA.PNG&type=a340);
+}
+
+.head-ani .img8 {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGQk11rwwFwXolTf7N8RphqbwsqhO97TU5aA&s);
+}
+
+.head-ani .img9 {
+    background-image: url(https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20150409_260%2Fbladel4_1428564436281QImjR_JPEG%2F%25B9%25E4%25C0%25BA%25B8%25D4%25B0%25ED%25B4%25D9%25B4%25CF%25B3%25C4.png&type=sc960_832);
+}
+
+.head-contents-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
 .movie-title {
     display: flex;
     height: 10vh;
     align-items: center;
     justify-content: center;
-    background-color: aqua;
 }
 
 .movie-title .text {
     font-size: 2vw;
+    font-weight: bold;
+    color: black;  
 }
 
 .movie-search {
     display: flex;
-    height: 7vh;
+    height: 8vh;
     justify-content: center;
     align-items: center;
-    background-color: pink;
 }
 
 .movie-search .wrapper {
     display: flex;
-    width: 25vw;
-    height: 3vh;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.movie-search .text, .search-input, .button-search {
-    font-size: 1vw;
-    height:auto;
+.movie-search .text {
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: black; 
 }
 
-.button-search {
+.search-input {
+    font-size: 1vw;
+    height: auto;
+}
+
+.button-search,
+.button-backhome {
+    width: 6vw;
+    height: 3.5vh;
+    color: #fff;
+    background: beige;
+    border: 2px solid;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 0.1em 0.2em;
+    color: var(--color);
+    transition: 0.25s;
+
+    &:hover,
+    &:focus {
+        border-color: var(--hover);
+        color: rgb(255, 0, 153);
+    }
+}
+
+.button-search:hover,
+.button-backhome:hover {
+    box-shadow: inset 6.5em 0 0 0 var(--hover);
+}
+
+.button-search:focus,
+.button-backhome:focus {
+    box-shadow: inset 6.5em 0 0 0 var(--hover);
+}
+
+.search-input-container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin: 1em;
+}
+
+.button-search-clear {
+    position: absolute;
+    right: 0;
+    width: 2vw;
+    height: 2vh;
+    background: url(https://img.icons8.com/pastel-glyph/2x/cancel.png) center no-repeat;
+    background-size: 50%;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.button-search,
+.button-backhome {
     cursor: pointer;
 }
 
@@ -41,25 +166,86 @@
     height: 12vh;
     justify-content: center;
     align-items: center;
-    background-color: aquamarine;
 }
 
 .movie-select .button-wrapper {
     display: flex;
-    width: 4vw;
-    margin: 0 2.5em 0 2.5em;
+    width: 7vw;
+    height: 3em;
+    margin: 0 1.5em 0 1.5em;
 }
 
 .movie-select .button {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0 0.5em 0 0.5em;
     cursor: pointer;
     font-size: 0.8vw;
-    height: 3em;
+    font-family: "Concert One", sans-serif;
+    border-radius: 20%;
+    background: rgb(9, 240, 201);
+    background: linear-gradient(0deg, rgb(240, 140, 9) 0%, rgb(189, 49, 244) 100%);
+    color: #000;
+    border: solid #333;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0.25em 0.25em #333;
+}
+
+.movie-select .button:after {
+    position: absolute;
+    content: " ";
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+    -webkit-transform: scale(0.1);
+    transform: scale(0.1);
+}
+
+.movie-select .button:hover {
+    color: #fff;
+    border: none;
+    background: transparent;
+    box-shadow: 0.5em 0.5em #333;
+}
+
+.movie-select .button:hover:after {
+    background: rgb(0, 3, 255);
+    background: linear-gradient(0deg, rgba(2, 126, 251, 1) 0%, rgba(0, 3, 255, 1)100%);
+    -webkit-transform: scale(1);
+    transform: scale(1);
 }
 
 .movie-section-main {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-content: center;
+    background: #ddd;
+    background-size: 300%;
+    background-image: var(--gradient);
+    animation: bg-animation 3s infinite;
+}
+
+:root {
+    --gradient: linear-gradient(-45deg, #be185d, #ec4899, #d946ef, #0ea5e9);
+}
+
+@keyframes bg-animation {
+    0% {
+        background-position: left;
+    }
+
+    50% {
+        background-position: right;
+    }
+
+    100% {
+        background-position: left;
+    }
 }
 
 .main-card {
@@ -104,5 +290,6 @@
     position: absolute;
     bottom: 0;
     margin: 1vw 0 1vw 0;
+    font-size: 1.1vw;
     font-weight: bold;
 }

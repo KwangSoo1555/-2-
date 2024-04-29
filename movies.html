@@ -5,61 +5,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>recommendation of movie</title>
-<style>
-    @import "(reset).css";
-    @import "(style).css";
-</style>
+    <style>
+        @import "(reset).css";
+        @import "(style).css";
+        @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+    </style>
 </head>
 
 <body>
+    <div class="head-container">
+        <div class="head-ani">
+            <div class="head-ani img img1"></div>
+            <div class="head-ani img img2"></div>
+            <div class="head-ani img img3"></div>
+            <div class="head-ani img img4"></div>
+            <div class="head-ani img img5"></div>
+            <div class="head-ani img img6"></div>
+            <div class="head-ani img img7"></div>
+            <div class="head-ani img img8"></div>
+            <div class="head-ani img img9"></div>
+        </div>
 
-    <div class="movie-title">
-        <p class="movie-title text">광수의 영화 추천!!</p>
-    </div>                                
+        <div class="head-contents-wrapper">
+            <div class="movie-title">
+                <p class="movie-title text">영화보자</p>
+            </div>
 
-    <div class="movie-search">
-        <div class="movie-search wrapper">
-            <p class="movie-search text">영화 검색</p>
-            <input type="text" id="search-input" class="movie-search search-input" placeholder="제목을 검색해 보세요."
-                autofocus></input>
-            <button id="button-search" class="movie-search button-search">검색</button>
-        </div>
-    </div>
+            <div class="movie-search">
+                <div class="movie-search wrapper">
+                    <p class="movie-search text">영화 검색</p>
+                    <div class="search-input-container">
+                        <input type="text" id="search-input" class="movie-search search-input"
+                            placeholder="제목을 검색해 보세요." autofocus>
+                        <button id="search-clear-button" class="button-search-clear"></button>
+                    </div>
+                    <button id="button-search" class="movie-search button-search">검색</button>
+                    <button id="button-backhome" class="movie-seach button-backhome">홈으로</button>
+                </div>
+            </div>
 
-    <div class="movie-select">
-        <div class="movie-select button-wrapper">
-            <button class="movie-select button" id="button-box-office"><p>금주의</p><p>박스오피스</p></button>
-        </div>
-        <div class="movie-select button-wrapper">
-            <button class="movie-select button" id="button-korea">금주의 </br> 한국 영화</button>
-        </div>
-        <div class="movie-select button-wrapper">
-            <button class="movie-select button" id="button-sf">공상 과학</button>
-        </div>
-        <div class="movie-select button-wrapper">
-            <button class="movie-select button" id="button-romance">로맨스</button>
-        </div>
-        <div class="movie-select button-wrapper">
-            <button class="movie-select button" id="button-thriller">스릴러</button>
-        </div>
-        <div class="movie-select button-wrapper">
-            <button class="movie-select button" id="button-fantasy">판타지</button>
-        </div>
-        <div class="movie-select button-wrapper">
-            <button class="movie-select button" id="button-ghibli"><p>지브리</p><p>애니메이션</p></button>
-        </div>
-        <div class="movie-select button-wrapper">
-            <button class="movie-select button" id="button-marvel">마블 영화</button>
-        </div>
-        <div class="movie-select button-wrapper">
-            <button class="movie-select button" id="button-dc">DC 영화</button>
+            <div class="movie-select">
+                <div class="movie-select button-wrapper">
+                    <button class="movie-select button" id="button-box-office">
+                        <p>금주의</p>
+                        <p>박스오피스</p>
+                    </button>
+                </div>
+                <div class="movie-select button-wrapper">
+                    <button class="movie-select button" id="button-korea">
+                        <p>금주의</p>
+                        <p>한국 영화</p>
+                    </button>
+                </div>
+                <div class="movie-select button-wrapper">
+                    <button class="movie-select button" id="button-sf">
+                        <p>공상 과학</p>
+                    </button>
+                </div>
+                <div class="movie-select button-wrapper">
+                    <button class="movie-select button" id="button-romance">
+                        <p>로맨스</p>
+                    </button>
+                </div>
+                <div class="movie-select button-wrapper">
+                    <button class="movie-select button" id="button-thriller">
+                        <p>스릴러</p>
+                    </button>
+                </div>
+                <div class="movie-select button-wrapper">
+                    <button class="movie-select button" id="button-fantasy">
+                        <p>판타지</p>
+                    </button>
+                </div>
+                <div class="movie-select button-wrapper">
+                    <button class="movie-select button" id="button-ghibli">
+                        <p>지브리</p>
+                        <p>애니메이션</p>
+                    </button>
+                </div>
+                <div class="movie-select button-wrapper">
+                    <button class="movie-select button" id="button-marvel">
+                        </p>마블 영화</p>
+                    </button>
+                </div>
+                <div class="movie-select button-wrapper">
+                    <button class="movie-select button" id="button-dc">
+                        <p>DC 영화</p>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="movie-section-main" id="main-section">
     </div>
 
-    <script src="movie.js" defer></script>
+    <script src="moviemain.js" defer></script>
+    <script src="movieselect.js" defer></script>
 
 </body>
 
